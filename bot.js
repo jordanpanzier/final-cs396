@@ -5,7 +5,7 @@ const T = new Twit(config);
 makeTweet();
 
 function makeTweet() {
-    var tweet = "This is a tweet.";
+    var tweet = "This is another tweet.";
     T.post('statuses/update', { status: tweet }, tweeted);
 
     function tweeted(err, data, response) {
@@ -15,5 +15,5 @@ function makeTweet() {
           console.log('Success: ' + data.text);
         }
       };
-      
+
 }
