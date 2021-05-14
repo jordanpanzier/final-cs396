@@ -5,8 +5,8 @@ const T = new Twit(config);
 makeTweet();
 
 function makeTweet() {
-    var tweet = "This is another tweet.";
-    T.post('statuses/update', { status: tweet }, tweeted);
+    var d = new Date()
+    T.post('statuses/update', { status: d }, tweeted);
 
     function tweeted(err, data, response) {
         if (err) {
