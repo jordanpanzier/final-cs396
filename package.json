@@ -1,0 +1,16 @@
+{
+  "name": "letterboxd-jp-bot",
+  "version": "1.0.0",
+  "description": "Twitter bot for jp letterboxd.",
+  "main": "bot.js",
+  "scripts": {
+    "test": "test",
+    "start": "node bot.js"
+  },
+  "author": "Jordan Panzier",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^9.0.2",
+    "twit": "^2.2.11"
+  }
+}
