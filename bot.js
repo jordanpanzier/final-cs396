@@ -2,7 +2,22 @@ const Twit = require('twit');
 const config = require('./config.js');
 const T = new Twit(config);
 
-makeTweet();
+const letterboxd = require('letterboxd');
+
+
+letterboxd("jpanzier")
+  .then((items) => 
+    items.forEach(function(item){
+      if (item.type == 'diary' && item.date.watched != 1609372800000){
+        const movie = {
+          "film":item.film,
+          "watched-date":item.rating
+        }
+        
+      }
+    }
+    ))
+  .catch((error) => console.log(error));
 
 function makeTweet() {
     var d = new Date()
@@ -15,5 +30,6 @@ function makeTweet() {
           console.log('Success: ' + data.text);
         }
       };
-
 }
+
+makeTweet();
