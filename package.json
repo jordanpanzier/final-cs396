@@ -12,6 +12,7 @@
   "dependencies": {
     "dotenv": "^9.0.2",
     "letterboxd": "^2.0.0",
+    "mongoose": "^5.12.10",
     "twit": "^2.2.11"
   }
 }
