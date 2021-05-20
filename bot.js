@@ -24,14 +24,6 @@ function makeTweet(movie, rating) {
       };
 }
 
-/*
-Get the movie database. 
-Make a list of the movie titles from the database.
-Get the Letterboxd movies. 
-Check if the Letterboxd movie title is in the database list. 
-If it isn't make a tweet and add it to the database.
-*/
-
 fetch(`${baseURL}/movies/`)
 .then(response => response.json())
 .then(dataMovies => {
@@ -44,6 +36,10 @@ fetch(`${baseURL}/movies/`)
         letterMovies.forEach((letterMovie) => {
             if (letterMovie.type != 'list' && letterMovie.date.watched != 1609372800000
                 && !movieTitleList.includes(letterMovie.film.title)){
+                    const movie = {
+                        title:letterMovie.film.title,
+                        rating:letterMovie.rating.score
+                    }
                     fetch(`${baseURL}/movies/`, {
                         method: 'POST',
                         headers: {
@@ -59,6 +55,7 @@ fetch(`${baseURL}/movies/`)
                         }
                     })
                     .then(dataMovie => {
+                        makeTweet(movie.title, movie.rating)
                         console.log('Success:', dataMovie);
                     })
                     .catch(err => {
