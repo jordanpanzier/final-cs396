@@ -6,7 +6,7 @@ Implemented: A Twitter bot using Node.js, Heroku, and MongoDB. Runs every hour, 
 Time Spent: 12 hours. </br>
 
 ## Deliverable #2 
-Plan: Manually update my MongoDB database to contain all the movies on my Letterboxd. I learned that the Letterboxd API isn't really public because the authentication process can take months. So, I used what little data is accessible to the public (a user's twenty most recent diary entries and the user's lists) to update the database/Twitter bot, but I need to fill in the rest. Work with HTML/CSS (maybe a CSS Framework) to create a webpage with all the movies in my diary. 
+Plan: Manually update my MongoDB database to contain all the movies on my Letterboxd. I learned that the Letterboxd API isn't really public because the authentication process can take months. So, I used what little data is accessible to the public (a user's twenty most recent diary entries and the user's lists) to update the database for Deliverable #1, but I need to fill in the rest. Work with HTML/CSS (maybe a CSS Framework) to create a webpage with all the movies in my diary. 
 
 ## Deliverable #3
 Plan: Create a way to organize (by film name, date watched, runtime, etc.) the films on the webpage. 
