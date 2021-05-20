@@ -2,7 +2,7 @@
 
 ## Deliverable #1 
 Plan: Create a Twitter bot that updates whenever I update my Letterboxd account. </br>
-Implemented: A Twitter bot using Node.js, Heroku, and MongoDB. Runs every hour, and if I have updated my Letterboxd diary (which keeps track of the movies I watch), @letterboxd_jp will tweet out what I watched and what I rated it. </br>
+Implemented: A Twitter bot using Node.js, Heroku, and MongoDB. Runs every hour (by calling node bot.js), and if I have updated my Letterboxd diary (which keeps track of the movies I watch), @letterboxd_jp will tweet out what I watched and what I rated it. </br>
 Time Spent: 12 hours. </br>
 
 ## Deliverable #2 
