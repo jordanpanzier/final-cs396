@@ -6,6 +6,15 @@ const express = require("express");
 const { response } = require("express");
 const router = express.Router();
 
+router.route("/reset")
+    .get((_req, res) => {
+        resetDB(() => {
+            res.status(200).send({
+                message: "Data has been reset."
+            });
+        });
+    });
+
 router.route("/")
     .get((_req, res) => {
         console.log("GET /");
