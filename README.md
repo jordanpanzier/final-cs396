@@ -1,6 +1,6 @@
 # CS396 Final Project
 
-## Deliverable #1 ~11 hours of work
+## Deliverable #1 
 Implemented a Twitter bot using Node.js, Heroku, and MongoDB. Runs every hour, and if I have updated my Letterboxd diary (which keeps track of the movies I watch), @letterboxd_jp will tweet out what I watched and what I rated it. 
 
 ## Credits 
