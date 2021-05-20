@@ -1,9 +1,9 @@
 # CS396 Final Project
 
 ## Deliverable #1 
-Plan: Create a Twitter bot that updates whenever I update my Letterboxd account. 
-Implemented: A Twitter bot using Node.js, Heroku, and MongoDB. Runs every hour, and if I have updated my Letterboxd diary (which keeps track of the movies I watch), @letterboxd_jp will tweet out what I watched and what I rated it. 
-Time Spent: 12 hours.
+Plan: Create a Twitter bot that updates whenever I update my Letterboxd account. </br>
+Implemented: A Twitter bot using Node.js, Heroku, and MongoDB. Runs every hour, and if I have updated my Letterboxd diary (which keeps track of the movies I watch), @letterboxd_jp will tweet out what I watched and what I rated it. </br>
+Time Spent: 12 hours. </br>
 
 ## Deliverable #2 
 Plan: Manually update my MongoDB database to contain all the movies on my Letterboxd. I learned that the Letterboxd API isn't really public because the authentication process can take months. So, I used what little data is accessible to the public (a user's twenty most recent diary entries and the user's lists) to update the database/Twitter bot, but I need to fill in the rest. Work with HTML/CSS (maybe a CSS Framework) to create a webpage with all the movies in my diary. 
