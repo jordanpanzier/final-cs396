@@ -1,3 +1,25 @@
+const baseURL = "https://letterboxd-jp.herokuapp.com/";
+const fetch = require("node-fetch");
+
+const config = require("./config/config")[env || "development"];
+
+const Twit = require('twit');
+const T = new Twit(config);
+const letterboxd = require('letterboxd');
+
+function makeTweet(movie, rating) {
+    var tweet = "I just watched " + movie + " and rated it " + rating + "/5 stars."
+    T.post('statuses/update', { status: tweet}, tweeted);
+
+    function tweeted(err, data, response) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log('Success: ' + data.text);
+        }
+      };
+}
+
 letterboxd("jpanzier")
         .then((items) => 
             
