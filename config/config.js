@@ -2,7 +2,7 @@ const env = process.env;
 
 const dbConfig = {
     database: `mongodb+srv://${env.DB_USERNAME}:${env.DB_PASSWORD}@${env.DB_HOST}/${env.DB_NAME}?retryWrites=true&w=majority`,
-    host: "http://localhost",
+    host: "https://letterboxd-jp.herokuapp.com/",
     mongoConfig: {
         useCreateIndex: true,
         useFindAndModify: false,

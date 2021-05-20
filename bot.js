@@ -1,7 +1,11 @@
 const baseURL = "https://letterboxd-jp.herokuapp.com/";
 const fetch = require("node-fetch");
 
+require("dotenv").config();
+const env = "" + process.env.NODE_ENV;
+
 const config = require("./config/config")[env || "development"];
+console.log(config)
 
 const Twit = require('twit');
 const T = new Twit(config);
@@ -31,7 +35,7 @@ letterboxd("jpanzier")
                     }
                     fetch(`${baseURL}/movies/`)
                     .then(response => response.json())
-                    .then(data => {
+                    .then(dataMovies => {
                         fetch(`${baseURL}/movies/`, {
                             method: 'POST',
                             headers: {
@@ -46,8 +50,8 @@ letterboxd("jpanzier")
                                 return response.json();
                             }
                         })
-                        .then(data => {
-                            console.log('Success:', data);
+                        .then(dataMovie => {
+                            console.log('Success:', dataMovie);
                         })
                         .catch(err => {
                             console.error(err);
