@@ -8,4 +8,4 @@ Implemented a Twitter bot using Node.js, Heroku, and MongoDB. Runs every hour, a
 * [Twitter API and Twitter Bots](https://shiffman.net/a2z/twitter-bots/)</br>
 * [How to Build a REST API with Express and Mongoose](https://rahmanfadhil.com/express-rest-api/)</br>
 * [Show Off Your Letterboxd Film Diary with Eleventy](https://smithtimmytim.com/blog/2020/create-a-film-diary-with-eleventy-and-letterboxd/)</br>
-* [CS396](https://cs396-web-dev.github.io/spring2021/) </br>
+* [CS396 Spring 2021: Intro to Web Development](https://cs396-web-dev.github.io/spring2021/) </br>
