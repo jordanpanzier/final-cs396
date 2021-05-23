@@ -11,7 +11,19 @@ const MovieSchema = new Schema({
     rating: {
         type: Number,
         required: true
-    } 
+    }, 
+    imageURL: {
+        type: String,
+        required:true
+    },
+    dateWatched: {
+        type: Number,
+        required:true
+    },
+    DataTransferItem: {
+        type: String,
+        required:true
+    }
 });
 
 MovieSchema.statics.create = function(obj) {

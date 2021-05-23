@@ -37,8 +37,8 @@ fetch(`${baseURL}/movies/`)
     // Get the twenty most recent diary entries for my Letterboxd account, jpanzier.
     letterboxd("jpanzier")
     .then((letterMovies) => {
+        
         letterMovies.forEach((letterMovie) => {
-
             // Check that it's a movie and that I watched it past 1/1/21.
             // I retroactively logged all my movies before 2021, but this 
             // will only track after that date. 
@@ -46,9 +46,11 @@ fetch(`${baseURL}/movies/`)
                 && !movieTitleList.includes(letterMovie.film.title)){
                     const movie = {
                         title:letterMovie.film.title,
-                        rating:letterMovie.rating.score
+                        rating:letterMovie.rating.score,
+                        imageURL:letterMovie.film.image.medium,
+                        dateWatched: letterMovie.date.watched,
+                        dateReleased: letterMovie.film.year
                     }
-
                     // Add movie to database. 
                     fetch(`${baseURL}/movies/`, {
                         method: 'POST',
@@ -65,7 +67,7 @@ fetch(`${baseURL}/movies/`)
                         }
                     })
                     .then(dataMovie => {
-                        makeTweet(movie.title, movie.rating)
+                        //makeTweet(movie.title, movie.rating)
                         console.log('Success:', dataMovie);
                     })
                     .catch(err => {
@@ -74,7 +76,7 @@ fetch(`${baseURL}/movies/`)
                     });
             }
             else{
-                console.log("Film already in database.")
+                console.log("Database doesn't need to be updated.")
             }
         })
     })

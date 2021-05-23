@@ -34,7 +34,8 @@ router.route("/movies")
         console.log("POST /movies");
 
         const newMovie = req.body;
-        if (!newMovie.title || !newMovie.rating){
+        if (!newMovie.title || !newMovie.rating ||
+            !newMovie.imageURL || !newMovie.dateWatched || !newMovie.dateReleased){
             res.status(400).sendStatus({
                 message: "Input doesn't have a title or rating."
             });
