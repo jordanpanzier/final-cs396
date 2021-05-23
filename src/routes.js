@@ -37,7 +37,7 @@ router.route("/movies")
         if (!newMovie.title || !newMovie.rating ||
             !newMovie.imageURL || !newMovie.dateWatched || !newMovie.dateReleased){
             res.status(400).sendStatus({
-                message: "Input doesn't have a title or rating."
+                message: "Input doesn't have necessesary requirements."
             });
             return;
         }

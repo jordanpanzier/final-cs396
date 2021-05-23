@@ -47,10 +47,11 @@ fetch(`${baseURL}/movies/`)
                     const movie = {
                         title:letterMovie.film.title,
                         rating:letterMovie.rating.score,
-                        imageURL:letterMovie.film.image.medium,
+                        imageUrl:letterMovie.film.image.medium,
                         dateWatched: letterMovie.date.watched,
                         dateReleased: letterMovie.film.year
                     }
+                    console.log(movie)
                     // Add movie to database. 
                     fetch(`${baseURL}/movies/`, {
                         method: 'POST',

@@ -1,5 +1,11 @@
 {
     "movies": [
-        
+        {
+            "title": "Almost Famous",
+            "rating": 5, 
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/Almost_famous_poster1.jpg/220px-Almost_famous_poster1.jpg",
+            "dateWatched": 1999900000,
+            "dateReleased": 2000
+        }
     ]
 }

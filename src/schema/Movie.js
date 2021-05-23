@@ -12,7 +12,7 @@ const MovieSchema = new Schema({
         type: Number,
         required: true
     }, 
-    imageURL: {
+    imageUrl: {
         type: String,
         required:true
     },
@@ -20,7 +20,7 @@ const MovieSchema = new Schema({
         type: Number,
         required:true
     },
-    DataTransferItem: {
+    dateReleased: {
         type: String,
         required:true
     }
