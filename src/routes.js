@@ -48,4 +48,28 @@ router.route("/movies")
 
     });
 
+router.route("/movies/:id")
+    .delete((req, res) => {
+        console.log(`DELETE /movies/${req.params.id}`);
+        Movie.findOneAndDelete(
+            {_id: req.params.id}
+        )
+        .then(movie => {
+            if (movie) {
+                res.status(200).send(null)
+            }
+            else {
+                res.status(404).send({
+                    message: "ID not found."
+                    });
+            }
+        })
+        .catch(err => {
+            res.status(404).send({
+                message: "Error.",
+                err: err
+                });
+            });
+    })
+
 module.exports = router;
