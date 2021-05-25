@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:8081";
+const baseURL = "https://letterboxd-jp.herokuapp.com";
 const fetch = require("node-fetch");
 
 require("dotenv").config();
@@ -37,8 +37,8 @@ fetch(`${baseURL}/movies/`)
     // Get the twenty most recent diary entries for my Letterboxd account, jpanzier.
     letterboxd("jpanzier")
     .then((letterMovies) => {
-        const testArray = [letterMovies[0]]
-        testArray.forEach((letterMovie) => {
+        
+        letterMovies.forEach((letterMovie) => {
             // Check that it's a movie and that I watched it past 1/1/21.
             // I retroactively logged all my movies before 2021, but this 
             // will only track after that date. 
@@ -62,27 +62,25 @@ fetch(`${baseURL}/movies/`)
                         body: JSON.stringify(movie)
                     })
                     .then(response => {
-                        console.log(movie)
-                        console.log(response)
-                        return response.text();
-                        /*
+                        //return response.json();
+                        
                         if (!response.ok) {
                             throw Error(response.statusText);
                         } else {
                             return response.json();
                         }
-                        */
+                        
                     })
                     .then(dataMovie => {
                         //makeTweet(movie.title, movie.rating)
                         console.log('Success:', dataMovie);
                     })
-                    /*
+                    
                     .catch(err => {
                         console.error(err);
            
                     });
-                    */
+                    
             }
             else{
                 console.log("Database doesn't need to be updated.")
@@ -90,11 +88,10 @@ fetch(`${baseURL}/movies/`)
         
         })
     })
-    //.catch((error) => console.log(error));
+    .catch((error) => console.log(error));
 })
-/*
+
 .catch(err => {
     console.error(err);
 
 })
-*/
