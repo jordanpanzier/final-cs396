@@ -61,9 +61,7 @@ fetch(`${baseURL}/movies/`)
                         },
                         body: JSON.stringify(movie)
                     })
-                    .then(response => {
-                        //return response.json();
-                        
+                    .then(response => {                        
                         if (!response.ok) {
                             throw Error(response.statusText);
                         } else {
