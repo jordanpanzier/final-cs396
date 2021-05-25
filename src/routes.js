@@ -34,8 +34,9 @@ router.route("/movies")
         console.log("POST /movies");
 
         const newMovie = req.body;
-        if (!newMovie.title || !newMovie.rating ||
-            !newMovie.imageURL || !newMovie.dateWatched || !newMovie.dateReleased){
+        console.log(newMovie);
+        if (!newMovie.title || !newMovie.rating || !newMovie.imageUrl || !newMovie.dateWatched || !newMovie.dateReleased){
+            console.log("SOMETHING WENT WRONG")
             res.status(400).sendStatus({
                 message: "Input doesn't have necessesary requirements."
             });
@@ -44,6 +45,7 @@ router.route("/movies")
         Movie.create(newMovie)
         .save()
         .then(movies => {
+            console.log("SOMETHING WENT RIGHT")
             res.status(201).send(movies);
         })
 

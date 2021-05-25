@@ -1,4 +1,4 @@
-const baseURL = "https://letterboxd-jp.herokuapp.com/";
+const baseURL = "http://localhost:8081";
 const fetch = require("node-fetch");
 
 require("dotenv").config();
@@ -37,13 +37,14 @@ fetch(`${baseURL}/movies/`)
     // Get the twenty most recent diary entries for my Letterboxd account, jpanzier.
     letterboxd("jpanzier")
     .then((letterMovies) => {
-        
-        letterMovies.forEach((letterMovie) => {
+        const testArray = [letterMovies[0]]
+        testArray.forEach((letterMovie) => {
             // Check that it's a movie and that I watched it past 1/1/21.
             // I retroactively logged all my movies before 2021, but this 
             // will only track after that date. 
             if (letterMovie.type != 'list' && letterMovie.date.watched != 1609372800000
                 && !movieTitleList.includes(letterMovie.film.title)){
+                    
                     const movie = {
                         title:letterMovie.film.title,
                         rating:letterMovie.rating.score,
@@ -51,7 +52,7 @@ fetch(`${baseURL}/movies/`)
                         dateWatched: letterMovie.date.watched,
                         dateReleased: letterMovie.film.year
                     }
-                    console.log(movie)
+                    
                     // Add movie to database. 
                     fetch(`${baseURL}/movies/`, {
                         method: 'POST',
@@ -61,25 +62,39 @@ fetch(`${baseURL}/movies/`)
                         body: JSON.stringify(movie)
                     })
                     .then(response => {
+                        console.log(movie)
+                        console.log(response)
+                        return response.text();
+                        /*
                         if (!response.ok) {
                             throw Error(response.statusText);
                         } else {
                             return response.json();
                         }
+                        */
                     })
                     .then(dataMovie => {
                         //makeTweet(movie.title, movie.rating)
                         console.log('Success:', dataMovie);
                     })
+                    /*
                     .catch(err => {
                         console.error(err);
-                        alert('Error!');
+           
                     });
+                    */
             }
             else{
                 console.log("Database doesn't need to be updated.")
             }
+        
         })
     })
-    .catch((error) => console.log(error));
+    //.catch((error) => console.log(error));
 })
+/*
+.catch(err => {
+    console.error(err);
+
+})
+*/
