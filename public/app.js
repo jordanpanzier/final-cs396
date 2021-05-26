@@ -8,7 +8,8 @@ const initMovies = () => {
             document.getElementById('movies').innerHTML += `
             <div class="movie"> 
                 <img src=${dataMovie.imageUrl} alt=${dataMovie.title}>
-                    <h3>${dataMovie.title}</h3>
+                <h3>${dataMovie.title}</h3>
+                <p>${dataMovie.ratingText}</p>
             </div>
             `
         })
