@@ -37,7 +37,7 @@ fetch(`${baseURL}/movies/`)
     // Get the twenty most recent diary entries for my Letterboxd account, jpanzier.
     letterboxd("jpanzier")
     .then((letterMovies) => {
-        
+        console.log(letterMovies)
         letterMovies.forEach((letterMovie) => {
             // Check that it's a movie and that I watched it past 1/1/21.
             // I retroactively logged all my movies before 2021, but this 
@@ -48,6 +48,7 @@ fetch(`${baseURL}/movies/`)
                     const movie = {
                         title:letterMovie.film.title,
                         rating:letterMovie.rating.score,
+                        ratingText:letterMovie.rating.text,
                         imageUrl:letterMovie.film.image.medium,
                         dateWatched: letterMovie.date.watched,
                         dateReleased: letterMovie.film.year

@@ -35,7 +35,7 @@ router.route("/movies")
 
         const newMovie = req.body;
         console.log(newMovie);
-        if (!newMovie.title || !newMovie.rating || !newMovie.imageUrl || !newMovie.dateWatched || !newMovie.dateReleased){
+        if (!newMovie.title || !newMovie.rating || !newMovie.ratingText || !newMovie.imageUrl || !newMovie.dateWatched || !newMovie.dateReleased){
             console.log("SOMETHING WENT WRONG")
             res.status(400).sendStatus({
                 message: "Input doesn't have necessesary requirements."

@@ -12,6 +12,10 @@ const MovieSchema = new Schema({
         type: Number,
         required: true
     }, 
+    ratingText: {
+        type: String,
+        required: true
+    },
     imageUrl: {
         type: String,
         required:true
@@ -31,6 +35,7 @@ MovieSchema.statics.create = function(obj) {
     const movie = new Movie();
     movie.title = obj.title;
     movie.rating = obj.rating;
+    movie.ratingText = obj.ratingText;
     movie.imageUrl = obj.imageUrl;
     movie.dateWatched = obj.dateWatched;
     movie.dateReleased = obj.dateReleased;
