@@ -124,5 +124,5 @@ const initMovies = (type) => {
     })
 }
 
-initMovies('title');
+initMovies('dateWatchedLE');
 
