@@ -20,7 +20,19 @@
             <p> 
                 Follow the movie diary <a class="left-underline" href="https://twitter.com/letterboxd_jp" target="_blank">Twitter</a>.
             </p>
+            
         </header>
+
+        <select id="menu" onchange="sortMovies()">
+            <option value="menu">Sort By:</option>
+            <option value="title">Title (A to Z)</option>
+            <option value="ratingLH">Rating (Lowest to Highest)</option>
+            <option value="ratingHL">Rating (Highest to Lowest)</option>
+            <option value="dateWatchedEL">Date Watched (Earliest to Latest)</option>
+            <option value="dateWatchedLE">Date Watched (Latest to Earliest)</option>
+            <option value="dateReleasedEL">Date Released (Earliest to Latest)</option>
+            <option value="dateReleasedLE">Date Released (Latest to Earliest)</option>
+        </select>
 
         <section id="movies">
             <!--Movies go here.-->

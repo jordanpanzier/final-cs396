@@ -1,6 +1,5 @@
 body {
     font-family: 'Dosis', sans-serif;
-    
 }
 
 header {
@@ -36,6 +35,12 @@ a.left-underline:before {
 a.left-underline:hover:before {
     visibility: visible;
     width: 100%;
+}
+
+select {
+    font-family: 'Dosis', sans-serif;
+    float: right;
+    margin-right: 11%;
 }
 
 #movies {
