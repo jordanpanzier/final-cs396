@@ -13,7 +13,7 @@ header a {
     color: #000;
     text-decoration: underline;
     text-decoration-style: dashed;
-    text-underline-offset: 1px;
+    text-underline-offset: 2px;
     text-decoration-thickness: 1px;
 }
 
@@ -53,14 +53,20 @@ a.left-underline:hover:before {
     height: 75px;
 }
 
+#movies p {
+    font-size: 12px;
+}
+
 .movie {
     margin: 10px;
+    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
 .movie img{
-    padding-top: 10px;
-    
+   
+    width: 150px;
+    border-radius: 10px;
 }
 
 @media(max-width: 1150px) {

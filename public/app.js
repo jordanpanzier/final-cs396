@@ -5,11 +5,14 @@ const initMovies = () => {
     .then(response => response.json())
     .then(dataMovies => {
         dataMovies.forEach((dataMovie) => {
+            const date = new Date(dataMovie.dateWatched)
+            date.setDate(date.getDate() + 1)
             document.getElementById('movies').innerHTML += `
             <div class="movie"> 
+                <p>${date.toString().slice(0,15)}</p>
                 <img src=${dataMovie.imageUrl} alt=${dataMovie.title}>
                 <h3>${dataMovie.title}</h3>
-                <p>${dataMovie.ratingText}</p>
+                <h4>${dataMovie.ratingText}</p>
             </div>
             `
         })
