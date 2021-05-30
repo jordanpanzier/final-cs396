@@ -9,7 +9,8 @@ Plan: Manually update my MongoDB database to contain all the movies on my Letter
 Implemented: The above and I created a way to organize (by film name, date watched, runtime, etc.) the films on the webpage
 
 ## Deliverable #3
-Plan: Fetch data from The Movie Database to create individual pages for each movie when the user clicks on them.  
+Plan: Fetch data from The Movie Database to create individual pages for each movie when the user clicks on them.  </br>
+Implemented: The above. 
 
 ## Credits 
 * [Let's Create a Twitter Bot using Node.js and Heroku](https://dev.to/developer_buddy/let-s-create-a-twitter-bot-using-node-js-and-heroku-1-3-43kb)</br>
