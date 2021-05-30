@@ -184,11 +184,16 @@ const initMovies = (type) => {
         dataMovies.forEach((dataMovie) => {
             const date = new Date(dataMovie.dateWatched)
             date.setDate(date.getDate() + 1)
+
+           
+            const theTitle = dataMovie.title.replace("\'", "\\'");
+           
+
             document.getElementById('movies').innerHTML += `
             <div class="movie"> 
                 <p>${date.toString().slice(0,15)}</p>
                 <a href="#0"> 
-                <img onclick="openMovieDetail('${dataMovie.title}', ${dataMovie.dateReleased})" src=${dataMovie.imageUrl} alt=${dataMovie.title}>
+                <img onclick="openMovieDetail('${theTitle}', ${dataMovie.dateReleased})" src=${dataMovie.imageUrl} alt=${dataMovie.title}>
                 </a>
                 <h3>${dataMovie.title}</h3>
                 <h4>${dataMovie.ratingText}</p>
