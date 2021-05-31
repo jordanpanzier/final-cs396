@@ -71,7 +71,7 @@ fetch(`${baseURL}/movies/`)
                         
                     })
                     .then(dataMovie => {
-                        //makeTweet(movie.title, movie.rating)
+                        makeTweet(movie.title, movie.rating)
                         console.log('Success:', dataMovie);
                     })
                     
