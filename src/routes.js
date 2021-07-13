@@ -52,6 +52,23 @@ router.route("/movies")
     });
 
 router.route("/movies/:id")
+    .patch((req, rest) => {
+        console.log(`PATCH /movies/${req.params.id}`);
+        Movie.findOneAndUpdate(
+            {_id: req.params.id}, 
+            req.body, 
+            {new:true}
+        )
+        .then(data => {
+            res.status(200).send(data);
+        })
+        .catch(err => {
+            res.status(404).send({
+                message: "Error.",
+                err:err
+            });
+        });
+    })
     .delete((req, res) => {
         console.log(`DELETE /movies/${req.params.id}`);
         Movie.findOneAndDelete(
