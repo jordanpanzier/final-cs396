@@ -52,7 +52,7 @@ router.route("/movies")
     });
 
 router.route("/movies/:id")
-    .patch((req, rest) => {
+    .patch((req, res) => {
         console.log(`PATCH /movies/${req.params.id}`);
         Movie.findOneAndUpdate(
             {_id: req.params.id}, 
