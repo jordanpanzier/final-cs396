@@ -31,7 +31,7 @@ fetch(`${baseURL}/movies/`)
 .then(dataMovies => {
     let movieTitleList = [];
     dataMovies.forEach((dataMovie) => {
-        movieTitleList.push(dataMovie.title)
+        movieTitleList.push(dataMovie.title.toLowerCase())
     })
 
     // Get the twenty most recent diary entries for my Letterboxd account, jpanzier.
@@ -43,7 +43,7 @@ fetch(`${baseURL}/movies/`)
             // I retroactively logged all my movies before 2021, but this 
             // will only track after that date. 
             if (letterMovie.type != 'list' && letterMovie.date.watched != 1609372800000
-                && !movieTitleList.includes(letterMovie.film.title)){
+                && !movieTitleList.includes(letterMovie.film.title.toLowerCase())){
                     
                     const movie = {
                         title:letterMovie.film.title,
