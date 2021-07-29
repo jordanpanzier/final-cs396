@@ -134,7 +134,7 @@ function openMovieDetail(movie, date){
                 <h4>Average Rating: ${movieData.results[0].vote_average}</h4>
                 <h4>Genres: ${theGenres}</h4>
                 <h4>Director(s): ${theDirectors}</h4>
-                <h4>Writers(s): ${theWriters}</h4>
+                <h4>Writer(s): ${theWriters}</h4>
                 <h4>Cast: ${theCast}</h4>
             `
             document.getElementById('movieDetail').style.visibility = "visible";
